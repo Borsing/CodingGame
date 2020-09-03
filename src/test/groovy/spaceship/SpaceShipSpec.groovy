@@ -14,9 +14,9 @@ import static spaceship.EnemySpaceShip.EnemySpaceShipType.FIGHTER
 class SpaceShipSpec extends Specification {
 
     @Unroll
-    void "Test SpaceShip.predictFight given list of Enemies space ship #test_case"() {
+    void "Test SpaceShip.predictFight given list of Enemies space ship #testCase"() {
         given: "Initialize enemySpaceShips and my spaceship"
-        def enemySpaceShips = getSampleSetEnemySpaceShip(test_case)
+        def enemySpaceShips = getSampleSetEnemySpaceShip(testCase)
 
         SpaceShip mySpaceShip = SpaceShip.builder()
                 .shieldStrength(5000)
@@ -30,7 +30,7 @@ class SpaceShipSpec extends Specification {
         lastHp == expectedLastHp
 
         where: "my data are in the file #test_case"
-        test_case | expectedLastHp
+        testCase | expectedLastHp
         1         | 3200
         2         | 1700
         3         | 2880
@@ -42,11 +42,11 @@ class SpaceShipSpec extends Specification {
     }
 
     /**
-     * Parse the file in src/test/resources/spaceship/test_case<test_case>.txt and return a list of EnemySpaceShip
-     * @param test_case index of the file parsed.
+     * Parse the file in src/test/resources/spaceship/test_case<testCase>.txt and return a list of EnemySpaceShip
+     * @param testCase index of the file parsed.
      */
-    private static List<EnemySpaceShip> getSampleSetEnemySpaceShip(int test_case) {
-        return Files.lines(Paths.get("src/test/resources/spaceship/test_case${test_case}.txt"))
+    private static List<EnemySpaceShip> getSampleSetEnemySpaceShip(int testCase) {
+        return Files.lines(Paths.get("src/test/resources/spaceship/test_case${testCase}.txt"))
                 .filter({ !it.empty })
                 .map({ it.split(" ") })
                 .map({
