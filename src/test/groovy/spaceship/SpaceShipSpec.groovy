@@ -7,9 +7,10 @@ import java.nio.file.Files
 import java.nio.file.Paths
 import java.util.stream.Collectors
 
-import static spaceship.EnemySpaceShip.*
+import static spaceship.EnemySpaceShip.EnemySpaceShipType
 import static spaceship.EnemySpaceShip.EnemySpaceShipType.CRUISER
 import static spaceship.EnemySpaceShip.EnemySpaceShipType.FIGHTER
+import static spaceship.EnemySpaceShip.builder
 
 class SpaceShipSpec extends Specification {
 
@@ -31,14 +32,14 @@ class SpaceShipSpec extends Specification {
 
         where: "my data are in the file #test_case"
         testCase | expectedLastHp
-        1         | 3200
-        2         | 1700
-        3         | 2880
-        4         | 3430
-        5         | 212
-        6         | -1
-        7         | 0
-        8         | 4950
+        1        | 3200
+        2        | 1700
+        3        | 2880
+        4        | 3430
+        5        | 212
+        6        | -1
+        7        | 0
+        8        | 4950
     }
 
     /**
