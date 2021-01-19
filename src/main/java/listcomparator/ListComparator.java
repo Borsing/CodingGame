@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ListComparator {
 
-	public static boolean haveSameElements(List<String> list1, List<String> list2) {
+	public static <T> boolean haveSameElements(List<T> list1, List<T> list2) {
 		return false;
 	}
 }
